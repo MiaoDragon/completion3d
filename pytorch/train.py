@@ -11,7 +11,7 @@ from tools.obs_data_loader import load_dataset
 from tools.import_tool import fileImport
 import argparse
 import torch
-from chamfer.dist_chamfer import chamferDist as chamfer
+from utils.chamfer.dist_chamfer import chamferDist as chamfer
 import torch.nn as nn
 import numpy as np
 import os
