@@ -31,4 +31,4 @@ class PointNetFCAE(nn.Module):
         x = x.view(-1, self.output_channels, self.num_points)
         x = x.transpose(2, 1).contiguous()
 
-        return x, code
+        return x
