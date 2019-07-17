@@ -12,13 +12,13 @@ class PointNetfeat(nn.Module):
                         torch.nn.Conv1d(64, 128, 1),
                         torch.nn.Conv1d(128, 128, 1),
                         torch.nn.Conv1d(128, 256, 1),
-                        torch.nn.Conv1d(256, self.code_nfts, 1)]
+                        torch.nn.Conv1d(256, self.code_ntfs, 1)]
         self.bns = [
                         torch.nn.BatchNorm1d(64),
                         torch.nn.BatchNorm1d(128),
                         torch.nn.BatchNorm1d(128),
                         torch.nn.BatchNorm1d(256),
-                        torch.nn.BatchNorm1d(self.code_nfts)]
+                        torch.nn.BatchNorm1d(self.code_ntfs)]
         self.dropout = torch.nn.Dropout()
         self.relu = torch.nn.ReLU()
 
@@ -29,7 +29,7 @@ class PointNetfeat(nn.Module):
             x = self.relu(x)
             x = self.dropout(x)
         x,_ = torch.max(x, 2)
-        x = x.view(-1, self.self.code_nfts)
+        x = x.view(-1, self.self.code_ntfs)
         return x
 def weights_init(m):
     classname = m.__class__.__name__
