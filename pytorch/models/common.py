@@ -13,12 +13,14 @@ class PointNetfeat(nn.Module):
                         torch.nn.Conv1d(128, 128, 1),
                         torch.nn.Conv1d(128, 256, 1),
                         torch.nn.Conv1d(256, self.code_ntfs, 1)]
+        self.convs = nn.ModuleList(self.convs)
         self.bns = [
                         torch.nn.BatchNorm1d(64),
                         torch.nn.BatchNorm1d(128),
                         torch.nn.BatchNorm1d(128),
                         torch.nn.BatchNorm1d(256),
                         torch.nn.BatchNorm1d(self.code_ntfs)]
+        self.bns = nn.ModuleList(self.bns)
         self.dropout = torch.nn.Dropout()
         self.relu = torch.nn.ReLU()
 
