@@ -68,7 +68,7 @@ def main(args):
     epoch = 1
 
     sm = 100  # start saving models after 100 epochs
-
+    criterion = chamfer()
     print("Starting epochs...\n")
     # epoch=1
     done = False
@@ -89,7 +89,7 @@ def main(args):
             # forward pass through encoder
             bt = net(bobs)
             # compute overall loss and backprop all the way
-            loss1, loss2 = chamfer()(bobs, bt)
+            loss1, loss2 = criterion(bobs, bt)
             #loss1, loss2 = criterion(bobs, bt)
             print('loss1')
             print(loss1)
