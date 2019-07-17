@@ -14,7 +14,7 @@ class PointNetFCAE(nn.Module):
         self.output_channels = output_channels
         self.encoder = PointNetfeat(code_ntfs, num_points, global_feat=True, trans=False)
         self.decoder = nn.Sequential(
-            nn.Linear(self.code_nfts, 256),
+            nn.Linear(self.code_ntfs, 256),
             nn.BatchNorm1d(256),
             nn.ReLU(),
             nn.Dropout(),
