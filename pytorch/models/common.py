@@ -31,7 +31,7 @@ class PointNetfeat(nn.Module):
             x = self.relu(x)
             x = self.dropout(x)
         x,_ = torch.max(x, 2)
-        x = x.view(-1, self.self.code_ntfs)
+        x = x.view(-1, self.code_ntfs)
         return x
 def weights_init(m):
     classname = m.__class__.__name__
