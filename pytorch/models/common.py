@@ -6,7 +6,7 @@ import numpy as np
 class PointNetfeat(nn.Module):
     def __init__(self, code_ntfs, num_points=2500, global_feat=True, trans=False):
         super(PointNetfeat, self).__init__()
-        self.ntfs = code_ntfs
+        self.code_ntfs = code_ntfs
         #self.stn = STN3d(self, num_points=num_points)
         self.convs = [  torch.nn.Conv1d(3, 64, 1),
                         torch.nn.Conv1d(64, 128, 1),
