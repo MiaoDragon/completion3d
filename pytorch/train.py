@@ -26,7 +26,7 @@ def to_var(x, volatile=False):
     return Variable(x, volatile=volatile)
 def main(args):
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
     importer = fileImport()
     env_data_path = args.env_data_path
