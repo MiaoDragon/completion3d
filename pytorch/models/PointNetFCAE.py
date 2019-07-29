@@ -28,7 +28,7 @@ class PointNetFCAE(nn.Module):
     def forward(self, x):
         code = self.encoder(x)
         x = self.decoder(code)
-        x = x.view(-1,self.num_points,self.output_channels)
+        x = x.view(-1, self.output_channels, self.num_points)
         #x = x.transpose(2, 1).contiguous()
 
         return x
