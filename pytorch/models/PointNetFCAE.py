@@ -17,11 +17,11 @@ class PointNetFCAE(nn.Module):
             nn.Linear(self.code_ntfs, 256),
             nn.BatchNorm1d(256),
             nn.ReLU(),
-            nn.Dropout(),
+            #nn.Dropout(),
             nn.Linear(256, 256),
             nn.BatchNorm1d(256),
             nn.ReLU(),
-            nn.Dropout(),
+            #nn.Dropout(),
             nn.Linear(256, output_channels*num_points)
         )
 

@@ -29,7 +29,7 @@ class PointNetfeat(nn.Module):
             x = self.convs[i](x)
             x = self.bns[i](x)
             x = self.relu(x)
-            x = self.dropout(x)
+            #x = self.dropout(x)
         x,_ = torch.max(x, 2)
         x = x.view(-1, self.code_ntfs)
         return x
